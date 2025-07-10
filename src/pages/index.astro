@@ -14,9 +14,21 @@ if (hour < 12) {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+    <style>
+      .dark {
+        color: #eee;
+        background-color: #222;
+      }
+    </style>
   </head>
-  <body>
+  <body id="page">
     <h1>Astro 5326</h1>
     <div>{greeting}</div>
+    <button onclick="toggleTheme()">Toggle</button>
+    <script is:client>
+      function toggleTheme() {
+        document.getElementById("page").classList.toggle("dark");
+      }
+    </script>
   </body>
 </html>
